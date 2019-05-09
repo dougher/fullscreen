@@ -37,12 +37,12 @@ function imagePost(){
 
   let isThereWords = Math.floor(Math.random() * 2);
 
-  if (isThereWords === 0){
-    let text = "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";
-    $post.text = text;
+  if (isThereWords === 1){
+    let text = "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br />";
+    $post.append(text).append('<br/>');
   }
 
-  $post.prepend('<img class="content" src="assets/images/template-image.png" />');
+  $post.append('<img src="assets/images/template-image.png" />');
 
   $('#main').append($post);
 }
@@ -52,12 +52,12 @@ function videoPost(){
 
   let isThereWords = Math.floor(Math.random() * 2);
 
-  if (isThereWords === 0){
-    let text = "Elementum sagittis vitae et leo duis ut.";
-    $post.text = text;
+  if (isThereWords === 1){
+    let text = "Elementum sagittis vitae et leo duis ut.<br />";
+    $post.append(text).append('<br/>');;
   }
 
-  $post.prepend('<img class="content" src="assets/videos/template-video.gif" />');
+  $post.append('<img src="assets/videos/template-video.gif" />');
 
   $('#main').append($post);
 }
