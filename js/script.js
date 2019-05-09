@@ -1,37 +1,63 @@
 "use strict";
 
-/*****************
+$(document).ready(function(){
+  AddRandomPosts();
+});
 
-Title of Project
-Author Name
+function AddRandomPosts(){
+  let nbOfPosts = 10;
 
-This is a template. You must fill in the title,
-author, and this description to match your project!
+  for (let i = 0; i < nbOfPosts; i++){
+    let postType = Math.floor(Math.random() * 3);
 
-******************/
-
-// preload()
-//
-// Description of preload
-
-function preload() {
-
+    switch (postType){
+      case 0:
+        wordPost();
+        break;
+      case 1:
+        imagePost();
+        break;
+      case 2:
+      videoPost();
+        break;
+    }
+  }
 }
 
+function wordPost(){
+  let $post = $('<div class="words"></div>');
 
-// setup()
-//
-// Description of setup
+  $post.text('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
 
-function setup() {
-
+  $('.main').append($post);
 }
 
+function imagePost(){
+  let $post = $('<div class="image"></div>');
 
-// draw()
-//
-// Description of draw()
+  let isThereWords = Math.floor(Math.random() * 2);
 
-function draw() {
+  if (isThereWords === 0){
+    let text = "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";
+    $post.text = text;
+  }
 
+  $post.prepend('<img src="assets/images/template_image.png" />');
+
+  $('.main').append($post);
+}
+
+function videoPost(){
+  let $post = $('<div class="video"></div>');
+
+  let isThereWords = Math.floor(Math.random() * 2);
+
+  if (isThereWords === 0){
+    let text = "Elementum sagittis vitae et leo duis ut.";
+    $post.text = text;
+  }
+
+  $post.prepend('<img src="assets/videos/template_video.png" />');
+
+  $('.main').append($post);
 }
