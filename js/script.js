@@ -25,15 +25,15 @@ function AddRandomPosts(){
 }
 
 function wordPost(){
-  let $post = $('<div class="words"></div>');
+  let $post = $('<div class="post" class="words"></div>');
 
   $post.text('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
 
-  $('.main').append($post);
+  $('#main').append($post);
 }
 
 function imagePost(){
-  let $post = $('<div class="image"></div>');
+  let $post = $('<div class="post" class="image"></div>');
 
   let isThereWords = Math.floor(Math.random() * 2);
 
@@ -42,13 +42,13 @@ function imagePost(){
     $post.text = text;
   }
 
-  $post.prepend('<img src="assets/images/template_image.png" />');
+  $post.prepend('<img class="content" src="assets/images/template-image.png" />');
 
-  $('.main').append($post);
+  $('#main').append($post);
 }
 
 function videoPost(){
-  let $post = $('<div class="video"></div>');
+  let $post = $('<div class="post" class="video"></div>');
 
   let isThereWords = Math.floor(Math.random() * 2);
 
@@ -57,7 +57,7 @@ function videoPost(){
     $post.text = text;
   }
 
-  $post.prepend('<img src="assets/videos/template_video.png" />');
+  $post.prepend('<img class="content" src="assets/videos/template-video.gif" />');
 
-  $('.main').append($post);
+  $('#main').append($post);
 }
